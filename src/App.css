@@ -92,6 +92,18 @@
   display: none;
 }
 
+.css-34hspi .MuiChartsAxis-line {
+   stroke: #f7f8fd !important;
+}
+
+.css-34hspi .MuiChartsAxis-tickLabel {
+   stroke: #f7f8fd !important;
+}
+
+.css-34hspi .MuiChartsAxis-tick {
+   stroke: #f7f8fd !important;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
