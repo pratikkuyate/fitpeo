@@ -1,0 +1,102 @@
+/* src/App.css */
+
+.App {
+  text-align: center;
+  background-color: #141416;
+  color: #141316;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.content {
+  flex-grow: 1;
+  margin-top: 64px;
+  padding: 16px;
+}
+
+/* Adjust sidebar for different screen sizes */
+.sidebar-open .content {
+  margin-left: 240px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar-closed .content {
+  margin-left: 60px;
+  transition: margin-left 0.3s ease;
+}
+
+/* Responsive design for mobile and tablet */
+@media (max-width: 768px) {
+  .sidebar-open .content,
+  .sidebar-closed .content {
+    margin-left: 0;
+  }
+
+  .App-header {
+    font-size: calc(8px + 2vmin);
+  }
+
+  .content {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header {
+    font-size: calc(6px + 2vmin);
+  }
+
+  .content {
+    padding: 4px;
+  }
+}
+
+/* Chart styles */
+.css-1k2u9zb-MuiChartsAxis-root .MuiChartsAxis-tickLabel {
+  fill: #f7f8fd !important;
+}
+
+.css-1k2u9zb-MuiChartsAxis-root .MuiChartsAxis-line {
+  stroke: #f7f8fd !important;
+}
+
+.css-1k2u9zb-MuiChartsAxis-root .MuiChartsAxis-tick {
+  stroke: #f7f8fd !important;
+}
+
+.css-1u0lry5-MuiChartsLegend-root {
+  display: none;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
