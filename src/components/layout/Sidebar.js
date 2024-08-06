@@ -8,14 +8,17 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
 import Header from "./Header"; // Adjust the import path as necessary
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import AssessmentRoundedIcon from "@mui/icons-material/AssessmentRounded";
+import TaskRoundedIcon from "@mui/icons-material/TaskRounded";
+import AccountBalanceWalletRoundedIcon from "@mui/icons-material/AccountBalanceWalletRounded";
+import LocalMallRoundedIcon from "@mui/icons-material/LocalMallRounded";
 
 const drawerWidth = 240; // Width when text is shown
 const drawerWidthCollapsed = 60; // Width when only icons are shown
@@ -73,13 +76,37 @@ const Sidebar = ({ open, setOpen, showText, setShowText, isMobile }) => {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List sx={{ overflow: "hidden" }}>
+        {/* <List sx={{ overflow: "hidden" }}>
           {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton sx={{ minHeight: 48 }}>
                 <ListItemIcon sx={{ color: "#fff" }}>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                 <ListItemText
                   primary={text}
+                  sx={{
+                    color: "#fff",
+                    opacity: showText ? 1 : 0,
+                    transition: "opacity 0.3s ease",
+                    whiteSpace: "nowrap",
+                  }}
+                />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List> */}
+        <List sx={{ overflow: "hidden" }}>
+          {[
+            { text: "Home", icon: <HomeRoundedIcon />, selected: true },
+            { text: "Reports", icon: <AssessmentRoundedIcon />, selected: false },
+            { text: "Tasks", icon: <TaskRoundedIcon />, selected: false },
+            { text: "Wallet", icon: <AccountBalanceWalletRoundedIcon />, selected: false },
+            { text: "Orders", icon: <LocalMallRoundedIcon />, selected: false },
+          ].map((item, index) => (
+            <ListItem key={index} disablePadding>
+              <ListItemButton sx={{ minHeight: 48 }}>
+                <ListItemIcon sx={{ color: item.selected ? "#7396ff" : "#fff" }}>{item.icon}</ListItemIcon>
+                <ListItemText
+                  primary={item.text}
                   sx={{
                     color: "#fff",
                     opacity: showText ? 1 : 0,
